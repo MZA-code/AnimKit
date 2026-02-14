@@ -1,0 +1,88 @@
+// AnimKit - Image Animations
+// ============================
+
+// Zoom into image on hover (requires overflow:hidden on parent or self)
+.ak-zoom-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-zoom-scale: 1.08;
+
+  overflow: hidden;
+
+  img,
+  &:where(img) {
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover img,
+  &:where(img):hover {
+    transform: scale(var(--ak-zoom-scale));
+  }
+}
+
+// Brightness increase on hover
+.ak-brightness-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: ease;
+  --ak-brightness: 1.15;
+
+  transition: filter var(--ak-duration) var(--ak-easing);
+
+  &:hover {
+    filter: brightness(var(--ak-brightness));
+  }
+}
+
+// Overlay fades in on hover
+.ak-overlay-fade {
+  --ak-duration: 0.3s;
+  --ak-easing: ease;
+  --ak-overlay-color: rgba(0, 0, 0, 0.4);
+
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ak-overlay-color);
+    opacity: 0;
+    transition: opacity var(--ak-duration) var(--ak-easing);
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// 3D tilt on hover
+.ak-tilt-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-tilt-x: 4deg;
+  --ak-tilt-y: 4deg;
+  --ak-tilt-perspective: 800px;
+
+  transition: transform var(--ak-duration) var(--ak-easing);
+
+  &:hover {
+    transform: perspective(var(--ak-tilt-perspective))
+               rotateX(var(--ak-tilt-x))
+               rotateY(var(--ak-tilt-y));
+  }
+}
+
+// Grayscale to color on hover (default: grayscale → color)
+.ak-grayscale-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: ease;
+
+  filter: grayscale(100%);
+  transition: filter var(--ak-duration) var(--ak-easing);
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+}

@@ -1,0 +1,21 @@
+// AnimKit - Mixins
+// =================
+
+// Standard transition with customizable properties
+@mixin ak-transition($properties...) {
+  transition-duration: var(--ak-duration);
+  transition-timing-function: var(--ak-easing);
+  transition-property: $properties;
+}
+
+// Pseudo-element base (for underlines, overlays, etc.)
+@mixin ak-pseudo($position: absolute) {
+  content: '';
+  position: $position;
+}
+
+// GPU-accelerated layer hint
+@mixin ak-gpu {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}

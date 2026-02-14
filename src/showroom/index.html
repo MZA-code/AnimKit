@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimKit - Showroom</title>
+  <link rel="icon" type="image/png" href="assets/animKit.png">
+  <link rel="stylesheet" href="../../dist/animkit.css">
+  <link rel="stylesheet" href="showroom.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="sh-header">
+  <div class="sh-header-inner">
+    <h1><span>Anim</span>Kit</h1>
+    <nav>
+      <a href="#buttons">Buttons</a>
+      <a href="#links">Links</a>
+      <a href="#images">Images</a>
+      <a href="#menus">Menus</a>
+      <a href="#attention">Attention</a>
+      <a href="#transitions">Transitions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="sh-main">
+
+  <!-- ==================== BUTTONS ==================== -->
+  <section id="buttons" class="sh-section">
+    <h2>Buttons</h2>
+    <p class="sh-section-desc">CTA and add-to-cart button animations. Hover to preview.</p>
+    <div class="sh-grid">
+
+      <!-- ak-lift-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Lift</h3><code>.ak-lift-hover</code></div>
+        <div class="demo-area"><button class="demo-btn ak-lift-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-lift-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-lift-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-lift-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-lift-y: -4px;
+  --ak-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+  transition: transform var(--ak-duration) var(--ak-easing),
+              box-shadow var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    transform: translateY(var(--ak-lift-y));
+    box-shadow: var(--ak-shadow);
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ak-fill-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Fill</h3><code>.ak-fill-hover</code></div>
+        <div class="demo-area"><button class="demo-btn demo-btn--outline ak-fill-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-fill-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-fill-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-fill-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --ak-fill-color: var(--ak-color-primary, #2563eb);
+  --ak-fill-text: #fff;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color var(--ak-duration) var(--ak-easing);
+
+  &amp;::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ak-fill-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover {
+    color: var(--ak-fill-text) !important;
+
+    &amp;::before {
+      transform: scaleX(1);
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ak-pulse-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Pulse</h3><code>.ak-pulse-hover</code></div>
+        <div class="demo-area"><button class="demo-btn ak-pulse-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-pulse-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-pulse-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-pulse-hover {
+  --ak-duration: 0.25s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-pulse-scale: 1.05;
+
+  transition: transform var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    transform: scale(var(--ak-pulse-scale));
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ak-shine-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Shine</h3><code>.ak-shine-hover</code></div>
+        <div class="demo-area"><button class="demo-btn ak-shine-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-shine-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-shine-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-shine-hover {
+  --ak-duration: 0.6s;
+  --ak-easing: ease;
+  --ak-shine-color: rgba(255, 255, 255, 0.3);
+
+  position: relative;
+  overflow: hidden;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      var(--ak-shine-color) 50%,
+      transparent 100%
+    );
+    transition: left var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::after {
+    left: 100%;
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ak-ripple-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Ripple</h3><code>.ak-ripple-hover</code></div>
+        <div class="demo-area"><button class="demo-btn ak-ripple-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-ripple-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-ripple-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-ripple-hover {
+  --ak-duration: 0.6s;
+  --ak-ripple-color: rgba(255, 255, 255, 0.3);
+
+  position: relative;
+  overflow: hidden;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--ak-ripple-color);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width var(--ak-duration) ease,
+                height var(--ak-duration) ease,
+                opacity var(--ak-duration) ease;
+  }
+
+  &amp;:hover::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ak-slide-arrow-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Slide Arrow</h3><code>.ak-slide-arrow-hover</code></div>
+        <div class="demo-area"><button class="demo-btn ak-slide-arrow-hover">Add to Cart</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>&lt;button class="ak-slide-arrow-hover"&gt;Add to Cart&lt;/button&gt;</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="class">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>ak-slide-arrow-hover</code></pre>
+          </div>
+          <div class="code-tab-panel" data-tab="scss">
+            <div class="code-panel-header"><button class="copy-btn">Copy</button></div>
+            <pre><code>.ak-slide-arrow-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-arrow-gap: 0.5em;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  transition: gap var(--ak-duration) var(--ak-easing);
+
+  &amp;::after {
+    content: '\2192';
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width var(--ak-duration) var(--ak-easing),
+                opacity var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover {
+    gap: var(--ak-arrow-gap);
+
+    &amp;::after {
+      max-width: 1.5em;
+      opacity: 1;
+    }
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== LINKS ==================== -->
+  <section id="links" class="sh-section">
+    <h2>Links</h2>
+    <p class="sh-section-desc">Navigation and link hover animations.</p>
+    <div class="sh-grid">
+
+      <!-- ak-underline-slide -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Underline Slide</h3><code>.ak-underline-slide</code></div>
+        <div class="demo-area"><a href="#" class="demo-link ak-underline-slide" onclick="return false">Shop Now</a></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-underline-slide" href="#"&gt;Shop Now&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-underline-slide</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-underline-slide {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-underline-color: currentColor;
+  --ak-underline-height: 2px;
+
+  position: relative;
+  text-decoration: none;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--ak-underline-height);
+    background: var(--ak-underline-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::after {
+    transform: scaleX(1);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-underline-grow -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Underline Grow</h3><code>.ak-underline-grow</code></div>
+        <div class="demo-area"><a href="#" class="demo-link ak-underline-grow" onclick="return false">Shop Now</a></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-underline-grow" href="#"&gt;Shop Now&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-underline-grow</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-underline-grow {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-underline-color: currentColor;
+  --ak-underline-height: 2px;
+
+  position: relative;
+  text-decoration: none;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: var(--ak-underline-height);
+    background: var(--ak-underline-color);
+    transform: scaleX(0) translateX(-50%);
+    transform-origin: center center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::after {
+    transform: scaleX(1) translateX(-50%);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-underline-thick -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Underline Thick</h3><code>.ak-underline-thick</code></div>
+        <div class="demo-area"><a href="#" class="demo-link ak-underline-thick" onclick="return false">Shop Now</a></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-underline-thick" href="#"&gt;Shop Now&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-underline-thick</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-underline-thick {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-underline-color: rgba(37, 99, 235, 0.2);
+  --ak-underline-height: 40%;
+
+  position: relative;
+  text-decoration: none;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--ak-underline-height);
+    background: var(--ak-underline-color);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::after {
+    transform: scaleX(1);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-color-fade -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Color Fade</h3><code>.ak-color-fade</code></div>
+        <div class="demo-area"><a href="#" class="demo-link ak-color-fade" onclick="return false">Shop Now</a></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-color-fade" href="#"&gt;Shop Now&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-color-fade</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-color-fade {
+  --ak-duration: 0.3s;
+  --ak-easing: ease;
+  --ak-color-hover: var(--ak-color-primary, #2563eb);
+
+  text-decoration: none;
+  transition: color var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    color: var(--ak-color-hover);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-bracket-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Brackets</h3><code>.ak-bracket-hover</code></div>
+        <div class="demo-area"><a href="#" class="demo-link ak-bracket-hover" onclick="return false">Shop Now</a></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-bracket-hover" href="#"&gt;Shop Now&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-bracket-hover</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-bracket-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-bracket-color: currentColor;
+  --ak-bracket-gap: 0.3em;
+
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &amp;::before,
+  &amp;::after {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity var(--ak-duration) var(--ak-easing),
+                transform var(--ak-duration) var(--ak-easing);
+    color: var(--ak-bracket-color);
+  }
+
+  &amp;::before {
+    content: '[';
+    transform: translateX(0.5em);
+    margin-right: 0;
+  }
+
+  &amp;::after {
+    content: ']';
+    transform: translateX(-0.5em);
+    margin-left: 0;
+  }
+
+  &amp;:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+    margin-right: var(--ak-bracket-gap);
+  }
+
+  &amp;:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+    margin-left: var(--ak-bracket-gap);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== IMAGES ==================== -->
+  <section id="images" class="sh-section">
+    <h2>Images</h2>
+    <p class="sh-section-desc">Product image hover effects. Uses a placeholder image.</p>
+    <div class="sh-grid">
+
+      <!-- ak-zoom-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Zoom</h3><code>.ak-zoom-hover</code></div>
+        <div class="demo-area"><div class="demo-img-wrapper ak-zoom-hover"><img src="https://picsum.photos/seed/animkit1/320/200" alt="Product"></div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-zoom-hover"&gt;
+  &lt;img src="product.jpg" alt="Product"&gt;
+&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-zoom-hover</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-zoom-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-zoom-scale: 1.08;
+
+  overflow: hidden;
+
+  img,
+  &amp;:where(img) {
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover img,
+  &amp;:where(img):hover {
+    transform: scale(var(--ak-zoom-scale));
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-brightness-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Brightness</h3><code>.ak-brightness-hover</code></div>
+        <div class="demo-area"><div class="demo-img-wrapper"><img class="ak-brightness-hover" src="https://picsum.photos/seed/animkit2/320/200" alt="Product"></div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;img class="ak-brightness-hover" src="product.jpg" alt="Product"&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-brightness-hover</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-brightness-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: ease;
+  --ak-brightness: 1.15;
+
+  transition: filter var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    filter: brightness(var(--ak-brightness));
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-overlay-fade -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Overlay Fade</h3><code>.ak-overlay-fade</code></div>
+        <div class="demo-area"><div class="demo-img-wrapper ak-overlay-fade"><img src="https://picsum.photos/seed/animkit3/320/200" alt="Product"></div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-overlay-fade"&gt;
+  &lt;img src="product.jpg" alt="Product"&gt;
+&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-overlay-fade</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-overlay-fade {
+  --ak-duration: 0.3s;
+  --ak-easing: ease;
+  --ak-overlay-color: rgba(0, 0, 0, 0.4);
+
+  position: relative;
+  overflow: hidden;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ak-overlay-color);
+    opacity: 0;
+    transition: opacity var(--ak-duration) var(--ak-easing);
+    pointer-events: none;
+  }
+
+  &amp;:hover::after {
+    opacity: 1;
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-tilt-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Tilt</h3><code>.ak-tilt-hover</code></div>
+        <div class="demo-area"><div class="demo-img-wrapper"><img class="ak-tilt-hover" src="https://picsum.photos/seed/animkit4/320/200" alt="Product"></div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;img class="ak-tilt-hover" src="product.jpg" alt="Product"&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-tilt-hover</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-tilt-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-tilt-x: 4deg;
+  --ak-tilt-y: 4deg;
+  --ak-tilt-perspective: 800px;
+
+  transition: transform var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    transform: perspective(var(--ak-tilt-perspective))
+               rotateX(var(--ak-tilt-x))
+               rotateY(var(--ak-tilt-y));
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-grayscale-hover -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Grayscale</h3><code>.ak-grayscale-hover</code></div>
+        <div class="demo-area"><div class="demo-img-wrapper"><img class="ak-grayscale-hover" src="https://picsum.photos/seed/animkit5/320/200" alt="Product"></div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;img class="ak-grayscale-hover" src="product.jpg" alt="Product"&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-grayscale-hover</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-grayscale-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: ease;
+
+  filter: grayscale(100%);
+  transition: filter var(--ak-duration) var(--ak-easing);
+
+  &amp;:hover {
+    filter: grayscale(0%);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MENUS ==================== -->
+  <section id="menus" class="sh-section">
+    <h2>Menus</h2>
+    <p class="sh-section-desc">Navigation menu item animations.</p>
+    <div class="sh-grid">
+
+      <!-- ak-menu-underline -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Menu Underline</h3><code>.ak-menu-underline</code></div>
+        <div class="demo-area">
+          <ul class="demo-menu">
+            <li><a class="ak-menu-underline" href="#" onclick="return false">Home</a></li>
+            <li><a class="ak-menu-underline" href="#" onclick="return false">Shop</a></li>
+            <li><a class="ak-menu-underline" href="#" onclick="return false">About</a></li>
+          </ul>
+        </div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-menu-underline" href="#"&gt;Shop&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-menu-underline</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-menu-underline {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-underline-color: currentColor;
+  --ak-underline-height: 2px;
+  --ak-underline-offset: 4px;
+
+  position: relative;
+  text-decoration: none;
+
+  &amp;::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--ak-underline-offset) * -1);
+    left: 0;
+    width: 100%;
+    height: var(--ak-underline-height);
+    background: var(--ak-underline-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::after,
+  &amp;.active::after {
+    transform: scaleX(1);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-menu-highlight -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Menu Highlight</h3><code>.ak-menu-highlight</code></div>
+        <div class="demo-area">
+          <ul class="demo-menu">
+            <li><a class="ak-menu-highlight" href="#" onclick="return false">Home</a></li>
+            <li><a class="ak-menu-highlight" href="#" onclick="return false">Shop</a></li>
+            <li><a class="ak-menu-highlight" href="#" onclick="return false">About</a></li>
+          </ul>
+        </div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;a class="ak-menu-highlight" href="#"&gt;Shop&lt;/a&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-menu-highlight</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-menu-highlight {
+  --ak-duration: 0.25s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-highlight-color: rgba(0, 0, 0, 0.06);
+  --ak-highlight-radius: 6px;
+
+  position: relative;
+  z-index: 0;
+
+  &amp;::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ak-highlight-color);
+    border-radius: var(--ak-highlight-radius);
+    transform: scaleX(0);
+    transform-origin: center center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &amp;:hover::before,
+  &amp;.active::before {
+    transform: scaleX(1);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-menu-fade-in -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Menu Fade In</h3><code>.ak-menu-fade-in</code></div>
+        <div class="demo-area">
+          <div class="demo-dropdown">
+            <button class="demo-dropdown-toggle">Hover me</button>
+            <div class="demo-dropdown-menu ak-menu-fade-in">
+              <a href="#" onclick="return false">Option 1</a>
+              <a href="#" onclick="return false">Option 2</a>
+              <a href="#" onclick="return false">Option 3</a>
+            </div>
+          </div>
+        </div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="dropdown"&gt;
+  &lt;button&gt;Menu&lt;/button&gt;
+  &lt;div class="ak-menu-fade-in"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-menu-fade-in</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-menu-fade-in {
+  --ak-duration: 0.25s;
+  --ak-easing: ease;
+  --ak-fade-y: 8px;
+
+  opacity: 0;
+  transform: translateY(var(--ak-fade-y));
+  visibility: hidden;
+  transition: opacity var(--ak-duration) var(--ak-easing),
+              transform var(--ak-duration) var(--ak-easing),
+              visibility var(--ak-duration);
+
+  :hover &gt; &amp;,
+  &amp;.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ATTENTION ==================== -->
+  <section id="attention" class="sh-section">
+    <h2>Attention Seekers</h2>
+    <p class="sh-section-desc">Looping animations to draw attention. One-shot animations can be replayed.</p>
+    <div class="sh-grid">
+
+      <!-- ak-pulse-loop -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Pulse Loop</h3><code>.ak-pulse-loop</code></div>
+        <div class="demo-area"><span class="demo-badge ak-pulse-loop">PROMO</span></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;span class="ak-pulse-loop"&gt;PROMO&lt;/span&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-pulse-loop</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-pulse-loop {
+  --ak-pulse-scale: 1.05;
+  --ak-pulse-duration: 1.5s;
+
+  animation: ak-pulse var(--ak-pulse-duration) ease-in-out infinite;
+}
+
+@keyframes ak-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(var(--ak-pulse-scale, 1.05)); }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-bounce-loop -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Bounce Loop</h3><code>.ak-bounce-loop</code></div>
+        <div class="demo-area"><span class="demo-badge ak-bounce-loop">NEW</span></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;span class="ak-bounce-loop"&gt;NEW&lt;/span&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-bounce-loop</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-bounce-loop {
+  --ak-bounce-height: -6px;
+  --ak-bounce-duration: 1.5s;
+
+  animation: ak-bounce var(--ak-bounce-duration) ease-in-out infinite;
+}
+
+@keyframes ak-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(var(--ak-bounce-height, -6px)); }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-glow-loop -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Glow Loop</h3><code>.ak-glow-loop</code></div>
+        <div class="demo-area"><button class="demo-btn ak-glow-loop">Buy Now</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;button class="ak-glow-loop"&gt;Buy Now&lt;/button&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-glow-loop</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-glow-loop {
+  --ak-glow-color: rgba(37, 99, 235, 0.5);
+  --ak-glow-spread: 12px;
+  --ak-glow-duration: 2s;
+
+  animation: ak-glow var(--ak-glow-duration) ease-in-out infinite;
+}
+
+@keyframes ak-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--ak-glow-color, rgba(37, 99, 235, 0.5)); }
+  50% { box-shadow: 0 0 var(--ak-glow-spread, 12px) 2px var(--ak-glow-color, rgba(37, 99, 235, 0.5)); }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-shake -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Shake</h3><code>.ak-shake</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><button class="demo-btn demo-element ak-shake">Error!</button></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;button class="ak-shake"&gt;Error!&lt;/button&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-shake</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-shake {
+  --ak-shake-intensity: 4px;
+  --ak-shake-duration: 0.5s;
+
+  animation: ak-shake var(--ak-shake-duration) ease-in-out;
+}
+
+@keyframes ak-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 50%, 90% { transform: translateX(calc(var(--ak-shake-intensity, 4px) * -1)); }
+  30%, 70% { transform: translateX(var(--ak-shake-intensity, 4px)); }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-wiggle -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Wiggle</h3><code>.ak-wiggle</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><span class="demo-badge demo-element ak-wiggle">SALE</span></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;span class="ak-wiggle"&gt;SALE&lt;/span&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-wiggle</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-wiggle {
+  --ak-wiggle-angle: 3deg;
+  --ak-wiggle-duration: 0.5s;
+
+  animation: ak-wiggle var(--ak-wiggle-duration) ease-in-out;
+}
+
+@keyframes ak-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(var(--ak-wiggle-angle, 3deg)); }
+  40% { transform: rotate(calc(var(--ak-wiggle-angle, 3deg) * -1)); }
+  60% { transform: rotate(var(--ak-wiggle-angle, 3deg)); }
+  80% { transform: rotate(calc(var(--ak-wiggle-angle, 3deg) * -1)); }
+}</code></pre></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TRANSITIONS ==================== -->
+  <section id="transitions" class="sh-section">
+    <h2>Transitions</h2>
+    <p class="sh-section-desc">Entry animations on page load. Click Replay to see them again.</p>
+    <div class="sh-grid">
+
+      <!-- ak-fade-in -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Fade In</h3><code>.ak-fade-in</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><div class="demo-text demo-element ak-fade-in">Hello World</div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-fade-in"&gt;Hello World&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-fade-in</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-fade-in {
+  --ak-duration: 0.6s;
+  --ak-easing: ease;
+
+  animation: ak-fade-in var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-slide-up -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Slide Up</h3><code>.ak-slide-up</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><div class="demo-text demo-element ak-slide-up">Hello World</div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-slide-up"&gt;Hello World&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-slide-up</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-slide-up {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 20px;
+
+  animation: ak-slide-up var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ak-slide-distance, 20px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-slide-in-left -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Slide In Left</h3><code>.ak-slide-in-left</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><div class="demo-text demo-element ak-slide-in-left">Hello World</div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-slide-in-left"&gt;Hello World&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-slide-in-left</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-slide-in-left {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 30px;
+
+  animation: ak-slide-in-left var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--ak-slide-distance, 30px) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-slide-in-right -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Slide In Right</h3><code>.ak-slide-in-right</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><div class="demo-text demo-element ak-slide-in-right">Hello World</div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-slide-in-right"&gt;Hello World&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-slide-in-right</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-slide-in-right {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 30px;
+
+  animation: ak-slide-in-right var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(var(--ak-slide-distance, 30px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+      <!-- ak-scale-in -->
+      <div class="demo-card">
+        <div class="demo-card-header"><h3>Scale In</h3><code>.ak-scale-in</code><button class="replay-btn" data-replay>Replay</button></div>
+        <div class="demo-area"><div class="demo-text demo-element ak-scale-in">Hello World</div></div>
+        <div class="code-tabs">
+          <div class="code-tabs-nav">
+            <button class="code-tabs-btn" data-tab="html">HTML</button>
+            <button class="code-tabs-btn" data-tab="class">Class</button>
+            <button class="code-tabs-btn" data-tab="scss">SCSS</button>
+          </div>
+          <div class="code-tab-panel" data-tab="html"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>&lt;div class="ak-scale-in"&gt;Hello World&lt;/div&gt;</code></pre></div>
+          <div class="code-tab-panel" data-tab="class"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>ak-scale-in</code></pre></div>
+          <div class="code-tab-panel" data-tab="scss"><div class="code-panel-header"><button class="copy-btn">Copy</button></div><pre><code>.ak-scale-in {
+  --ak-duration: 0.5s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-scale-from: 0.9;
+
+  animation: ak-scale-in var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--ak-scale-from, 0.9));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}</code></pre></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script src="showroom.js"></script>
+</body>
+</html>

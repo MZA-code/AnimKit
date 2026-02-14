@@ -1,0 +1,82 @@
+// AnimKit - Menu Animations
+// ===========================
+
+// Animated underline for active/hover menu item
+.ak-menu-underline {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-underline-color: currentColor;
+  --ak-underline-height: 2px;
+  --ak-underline-offset: 4px;
+
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--ak-underline-offset) * -1);
+    left: 0;
+    width: 100%;
+    height: var(--ak-underline-height);
+    background: var(--ak-underline-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
+}
+
+// Background highlight slides under the item
+.ak-menu-highlight {
+  --ak-duration: 0.25s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-highlight-color: rgba(0, 0, 0, 0.06);
+  --ak-highlight-radius: 6px;
+
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ak-highlight-color);
+    border-radius: var(--ak-highlight-radius);
+    transform: scaleX(0);
+    transform-origin: center center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover::before,
+  &.active::before {
+    transform: scaleX(1);
+  }
+}
+
+// Sub-menu fades in on hover
+.ak-menu-fade-in {
+  --ak-duration: 0.25s;
+  --ak-easing: ease;
+  --ak-fade-y: 8px;
+
+  opacity: 0;
+  transform: translateY(var(--ak-fade-y));
+  visibility: hidden;
+  transition: opacity var(--ak-duration) var(--ak-easing),
+              transform var(--ak-duration) var(--ak-easing),
+              visibility var(--ak-duration);
+
+  // Apply on parent hover to reveal sub-menu
+  :hover > &,
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}

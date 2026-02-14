@@ -1,0 +1,17 @@
+{
+  "name": "animkit",
+  "version": "1.0.0",
+  "description": "Mini librairie d'animations CSS/SCSS pour e-commerce",
+  "scripts": {
+    "build": "sass src/scss/main.scss dist/animkit.css --no-source-map && sass src/scss/main.scss dist/animkit.min.css --no-source-map --style=compressed",
+    "watch": "sass src/scss/main.scss dist/animkit.css --watch --no-source-map",
+    "dev": "npm run build && npx concurrently \"sass src/scss/main.scss dist/animkit.css --watch --no-source-map\" \"sass src/showroom/showroom.scss src/showroom/showroom.css --watch --no-source-map\" \"npx live-server src/showroom --port=3000\""
+  },
+  "devDependencies": {
+    "sass": "^1.80.0",
+    "concurrently": "^9.0.0",
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["css", "animations", "scss", "e-commerce", "prestashop", "shopware"],
+  "license": "MIT"
+}

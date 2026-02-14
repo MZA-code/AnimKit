@@ -1,0 +1,155 @@
+// AnimKit - Button Animations
+// =============================
+
+// Lift + shadow on hover
+.ak-lift-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-lift-y: -4px;
+  --ak-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+  transition: transform var(--ak-duration) var(--ak-easing),
+              box-shadow var(--ak-duration) var(--ak-easing);
+
+  &:hover {
+    transform: translateY(var(--ak-lift-y));
+    box-shadow: var(--ak-shadow);
+  }
+}
+
+// Background fill from left to right
+.ak-fill-hover {
+  --ak-duration: 0.4s;
+  --ak-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --ak-fill-color: var(--ak-color-primary, #2563eb);
+  --ak-fill-text: #fff;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color var(--ak-duration) var(--ak-easing);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--ak-fill-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover {
+    color: var(--ak-fill-text) !important;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Subtle scale up on hover
+.ak-pulse-hover {
+  --ak-duration: 0.25s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-pulse-scale: 1.05;
+
+  transition: transform var(--ak-duration) var(--ak-easing);
+
+  &:hover {
+    transform: scale(var(--ak-pulse-scale));
+  }
+}
+
+// Shine / glare sweep across button
+.ak-shine-hover {
+  --ak-duration: 0.6s;
+  --ak-easing: ease;
+  --ak-shine-color: rgba(255, 255, 255, 0.3);
+
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      var(--ak-shine-color) 50%,
+      transparent 100%
+    );
+    transition: left var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover::after {
+    left: 100%;
+  }
+}
+
+// Material-like ripple on hover
+.ak-ripple-hover {
+  --ak-duration: 0.6s;
+  --ak-ripple-color: rgba(255, 255, 255, 0.3);
+
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--ak-ripple-color);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width var(--ak-duration) ease,
+                height var(--ak-duration) ease,
+                opacity var(--ak-duration) ease;
+  }
+
+  &:hover::after {
+    width: 300%;
+    height: 300%;
+    opacity: 1;
+  }
+}
+
+// Arrow slides in from the right
+.ak-slide-arrow-hover {
+  --ak-duration: 0.3s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-arrow-gap: 0.5em;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  transition: gap var(--ak-duration) var(--ak-easing);
+
+  &::after {
+    content: '\2192'; // →
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width var(--ak-duration) var(--ak-easing),
+                opacity var(--ak-duration) var(--ak-easing);
+  }
+
+  &:hover {
+    gap: var(--ak-arrow-gap);
+
+    &::after {
+      max-width: 1.5em;
+      opacity: 1;
+    }
+  }
+}

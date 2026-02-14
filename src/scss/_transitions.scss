@@ -1,0 +1,96 @@
+// AnimKit - Entry Transitions
+// =============================
+// These animate on page load using CSS @keyframes
+
+// Fade in
+.ak-fade-in {
+  --ak-duration: 0.6s;
+  --ak-easing: ease;
+
+  animation: ak-fade-in var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Slide up with fade
+.ak-slide-up {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 20px;
+
+  animation: ak-slide-up var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ak-slide-distance, 20px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Slide in from left
+.ak-slide-in-left {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 30px;
+
+  animation: ak-slide-in-left var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--ak-slide-distance, 30px) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide in from right
+.ak-slide-in-right {
+  --ak-duration: 0.6s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-slide-distance: 30px;
+
+  animation: ak-slide-in-right var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(var(--ak-slide-distance, 30px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Scale in
+.ak-scale-in {
+  --ak-duration: 0.5s;
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-scale-from: 0.9;
+
+  animation: ak-scale-in var(--ak-duration) var(--ak-easing) both;
+}
+
+@keyframes ak-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--ak-scale-from, 0.9));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

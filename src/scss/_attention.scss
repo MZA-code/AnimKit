@@ -1,0 +1,72 @@
+// AnimKit - Attention Seekers
+// =============================
+
+// Continuous pulse
+.ak-pulse-loop {
+  --ak-pulse-scale: 1.05;
+  --ak-pulse-duration: 1.5s;
+
+  animation: ak-pulse var(--ak-pulse-duration) ease-in-out infinite;
+}
+
+@keyframes ak-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(var(--ak-pulse-scale, 1.05)); }
+}
+
+// Continuous bounce
+.ak-bounce-loop {
+  --ak-bounce-height: -6px;
+  --ak-bounce-duration: 1.5s;
+
+  animation: ak-bounce var(--ak-bounce-duration) ease-in-out infinite;
+}
+
+@keyframes ak-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(var(--ak-bounce-height, -6px)); }
+}
+
+// Pulsing glow/halo
+.ak-glow-loop {
+  --ak-glow-color: rgba(37, 99, 235, 0.5);
+  --ak-glow-spread: 12px;
+  --ak-glow-duration: 2s;
+
+  animation: ak-glow var(--ak-glow-duration) ease-in-out infinite;
+}
+
+@keyframes ak-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--ak-glow-color, rgba(37, 99, 235, 0.5)); }
+  50% { box-shadow: 0 0 var(--ak-glow-spread, 12px) 2px var(--ak-glow-color, rgba(37, 99, 235, 0.5)); }
+}
+
+// Micro-shake (one-shot, trigger via JS by adding the class)
+.ak-shake {
+  --ak-shake-intensity: 4px;
+  --ak-shake-duration: 0.5s;
+
+  animation: ak-shake var(--ak-shake-duration) ease-in-out;
+}
+
+@keyframes ak-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 50%, 90% { transform: translateX(calc(var(--ak-shake-intensity, 4px) * -1)); }
+  30%, 70% { transform: translateX(var(--ak-shake-intensity, 4px)); }
+}
+
+// Wiggle (oscillating rotation)
+.ak-wiggle {
+  --ak-wiggle-angle: 3deg;
+  --ak-wiggle-duration: 0.5s;
+
+  animation: ak-wiggle var(--ak-wiggle-duration) ease-in-out;
+}
+
+@keyframes ak-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(var(--ak-wiggle-angle, 3deg)); }
+  40% { transform: rotate(calc(var(--ak-wiggle-angle, 3deg) * -1)); }
+  60% { transform: rotate(var(--ak-wiggle-angle, 3deg)); }
+  80% { transform: rotate(calc(var(--ak-wiggle-angle, 3deg) * -1)); }
+}

@@ -1,0 +1,27 @@
+// AnimKit - Variables & Custom Properties
+// =========================================
+
+:root {
+  // Durations
+  --ak-duration-fast: 0.2s;
+  --ak-duration: 0.3s;
+  --ak-duration-slow: 0.5s;
+
+  // Easings
+  --ak-easing: cubic-bezier(0.6, 0, 0.4, 1);
+  --ak-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ak-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Colors
+  --ak-color-primary: #2563eb;
+  --ak-color-accent: #f59e0b;
+  --ak-color-overlay: rgba(0, 0, 0, 0.4);
+
+  // Shadows
+  --ak-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --ak-shadow-md: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --ak-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.16);
+}
+
+// SCSS variables (internal use)
+$ak-prefix: 'ak';

@@ -1,0 +1,13 @@
+// AnimKit - Accessibility
+// ========================
+// Respects user preference for reduced motion
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01s !important;
+  }
+}
